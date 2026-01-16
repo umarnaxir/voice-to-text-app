@@ -35,6 +35,10 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>This app needs speech recognition permission to convert your voice to text.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This app needs microphone permission to record your voice for speech-to-text conversion.</string>
 	<key>RCTNewArchEnabled</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
