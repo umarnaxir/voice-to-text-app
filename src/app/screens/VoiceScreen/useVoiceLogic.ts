@@ -23,6 +23,7 @@ export const useVoiceLogic = () => {
         setIsListening(false);
       },
       onResults: (text) => {
+        console.log('Transcribed text:', text);
         setTranscript(text);
       },
       onError: (errorMessage) => {
