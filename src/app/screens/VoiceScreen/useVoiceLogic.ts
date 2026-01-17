@@ -2,6 +2,7 @@ import {useState, useEffect, useCallback, useRef} from 'react';
 import {Alert} from 'react-native';
 import {useFocusEffect} from '@react-navigation/native';
 import {voiceService, VoiceEventHandlers} from '../../../utils/voiceService';
+import {filterProfanity} from '../../../utils/profanityFilter';
 
 export const useVoiceLogic = () => {
   const [isListening, setIsListening] = useState(false);
@@ -24,7 +25,9 @@ export const useVoiceLogic = () => {
       },
       onResults: (text) => {
         console.log('Transcribed text:', text);
-        setTranscript(text);
+        const filteredText = filterProfanity(text);
+        console.log('Filtered text:', filteredText);
+        setTranscript(filteredText);
       },
       onError: (errorMessage) => {
         setIsListening(false);
